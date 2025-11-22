@@ -3,6 +3,7 @@ import Hero from './components/Hero'
 import Work from './components/Work'
 import About from './components/About'
 import Contact from './components/Contact'
+import SplashCursor from './components/SplashCursor'
 
 function App() {
   return (
@@ -13,6 +14,9 @@ function App() {
         <div className="absolute top-1/3 -right-24 h-96 w-96 rounded-full bg-[radial-gradient(circle_at_center,rgba(236,72,153,0.2),transparent_60%)] blur-3xl" />
         <div className="absolute bottom-0 left-1/3 h-72 w-72 rounded-full bg-[radial-gradient(circle_at_center,rgba(34,197,94,0.15),transparent_60%)] blur-3xl" />
       </div>
+
+      {/* Global splash cursor overlay */}
+      <SplashCursor />
 
       <Navbar />
       <main>

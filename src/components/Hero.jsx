@@ -8,6 +8,15 @@ export default function Hero() {
         <Spline scene="https://prod.spline.design/VJLoxp84lCdVfdZu/scene.splinecode" style={{ width: '100%', height: '100%' }} />
       </div>
 
+      {/* Floating keyboard effect (subtle parallax) */}
+      <motion.div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 z-[1]"
+        initial={{ y: 0 }}
+        animate={{ y: [0, -10, 0] }}
+        transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
+      />
+
       {/* Gradient overlays */}
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-slate-950/40 via-slate-950/30 to-slate-950"></div>
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-slate-950"></div>
@@ -31,11 +40,17 @@ export default function Hero() {
             Let’s turn ambitious ideas into polished, production-grade products.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <a href="#work" className="px-5 py-3 rounded-xl bg-white text-slate-900 font-medium shadow-[0_10px_40px_-10px_rgba(255,255,255,0.4)] hover:-translate-y-0.5 transition">
-              View Work
+            <a href="#work" className="group px-5 py-3 rounded-xl bg-white text-slate-900 font-medium shadow-[0_10px_40px_-10px_rgba(255,255,255,0.4)] hover:-translate-y-0.5 transition">
+              <span className="relative inline-block">
+                View Work
+                <span className="absolute inset-0 rounded-lg bg-slate-900/5 opacity-0 group-hover:opacity-100 transition"></span>
+              </span>
             </a>
-            <a href="#contact" className="px-5 py-3 rounded-xl bg-gradient-to-r from-blue-500 via-cyan-400 to-fuchsia-500 text-white font-medium shadow-[0_10px_50px_-12px_rgba(59,130,246,0.6)] hover:-translate-y-0.5 transition">
-              Get in Touch
+            <a href="#contact" className="group px-5 py-3 rounded-xl bg-gradient-to-r from-blue-500 via-cyan-400 to-fuchsia-500 text-white font-medium shadow-[0_10px_50px_-12px_rgba(59,130,246,0.6)] hover:-translate-y-0.5 transition">
+              <span className="relative inline-block">
+                Get in Touch
+                <span className="absolute inset-0 rounded-lg bg-white/10 opacity-0 group-hover:opacity-100 transition"></span>
+              </span>
             </a>
           </div>
         </motion.div>
